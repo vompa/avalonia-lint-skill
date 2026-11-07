@@ -1,0 +1,23 @@
+{
+  "skill_name": "avalonia-lint",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "We just bumped this app from Avalonia 11 to 12.1. Lint it against the Avalonia docs and tell me what will break.",
+      "expected_output": "Runs scripts/avalonia_lint.py on the project. Reports the errors first, each with path:line, rule id, fix and doc link: Avalonia.Diagnostics package and AttachDevTools removed (AV-MIG-03), OpenFileDialog removed (AV-MIG-19), parameterless ShowDialog (AV-APP-22), old clipboard GetTextAsync (AV-MIG-09), Visibility instead of IsVisible (AV-MIG-54), missing x:DataType with compiled bindings (AV-BIND-01). Then warnings: SystemDecorations and Watermark obsolete, ControlTheme in Styles, compiled bindings switched off, StaticResource theme brush, blocking GetResult. Does not edit files unasked and names what it could not check.",
+      "files": ["files/legacy-app/LegacyApp.csproj", "files/legacy-app/MainWindow.axaml", "files/legacy-app/MainWindow.axaml.cs"]
+    },
+    {
+      "id": 2,
+      "prompt": "The linter flags GetAwaiter().GetResult() in our Program.cs backup path, but that code runs before Avalonia starts. How do I keep the linter quiet about it without hiding real cases?",
+      "expected_output": "Explains that this is a deliberate deviation and proposes a waiver in .avalonia-lint.json with rule AV-APP-07, the exact file path as glob and a written reason, rather than disabling the rule globally. Mentions the inline alternative (// avalonia-lint-disable AV-APP-07) and that the rule stays active for all other files.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "Review my new custom control (a gauge drawn in Render) against the Avalonia documentation before I open the PR.",
+      "expected_output": "Runs the linter on the project and the manual checklist (--manual), picks the rules for custom controls and rendering: AffectsRender for properties used in Render, no new Pen/Brush/FormattedText inside Render, Push* calls in using blocks, StyledProperty registration and naming, pseudo-classes. Reports findings with doc links and separates automatic findings from judgment-based ones.",
+      "files": []
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "name": "avalonia-lint",
+  "displayName": "Avalonia Lint",
+  "version": "0.1.0",
+  "description": "Checks Avalonia 12 apps (AXAML, C#, project files) against the official Avalonia documentation: a rule catalog with source links, a standard-library Python linter and a manual review checklist.",
+  "author": {
+    "name": "vompa",
+    "url": "https://github.com/vompa"
+  },
+  "homepage": "https://github.com/vompa/avalonia-lint-skill",
+  "repository": "https://github.com/vompa/avalonia-lint-skill",
+  "license": "MIT",
+  "icon": "./icon.png",
+  "documentationUrl": "https://github.com/vompa/avalonia-lint-skill#readme",
+  "supportUrl": "https://github.com/vompa/avalonia-lint-skill/issues",
+  "privacyPolicyUrl": "https://github.com/vompa/avalonia-lint-skill/blob/main/PRIVACY.md",
+  "termsOfServiceUrl": "https://github.com/vompa/avalonia-lint-skill/blob/main/LICENSE",
+  "keywords": ["avalonia", "lint", "linter", "xaml", "axaml", "code-review", "desktop", "dotnet"],
+  "skills": ["./avalonia-lint/"]
+}

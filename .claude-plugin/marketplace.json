@@ -1,0 +1,15 @@
+{
+  "name": "vompa-skills",
+  "description": "Skills by vompa for Claude Code",
+  "owner": {
+    "name": "vompa",
+    "url": "https://github.com/vompa"
+  },
+  "plugins": [
+    {
+      "name": "avalonia-lint",
+      "source": "./",
+      "description": "Checks Avalonia 12 apps against the official Avalonia documentation"
+    }
+  ]
+}

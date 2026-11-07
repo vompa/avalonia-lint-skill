@@ -1,0 +1,13 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="LegacyApp.MainWindow"
+        SystemDecorations="None">
+  <Window.Styles>
+    <ControlTheme x:Key="Pill" TargetType="Button" />
+  </Window.Styles>
+  <StackPanel>
+    <TextBox Watermark="Search" Text="{Binding Query}" />
+    <Border Background="{StaticResource SystemControlBackgroundAltHighBrush}" Visibility="Collapsed" />
+    <ListBox ItemsSource="{Binding Customers}" />
+  </StackPanel>
+</Window>
