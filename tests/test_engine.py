@@ -99,7 +99,7 @@ class LintTreeTests(unittest.TestCase):
         return path
 
     def test_excluded_folders_are_skipped(self):
-        for folder in ["bin", "obj", ".git", "node_modules", ".claude/worktrees/x"]:
+        for folder in ["bin", "obj", ".git", "node_modules", ".claude/worktrees/x", ".claude/skills/avalonia-lint/evals"]:
             self.write(f"{folder}/V.axaml", '<TextBox Watermark="x" />')
         self.write("src/V.axaml", '<TextBox Watermark="x" />')
         findings = lint.lint(self.root, [rule()])

@@ -27,7 +27,8 @@ SEVERITIES = ("info", "warning", "error")
 CHECKS = ("line", "multiline", "file-requires", "project-requires", "manual")
 SCOPES = ("avalonia", "any")
 EXCLUDED_DIRS = {"bin", "obj", ".git", ".vs", ".idea", "node_modules", "__pycache__"}
-EXCLUDED_PATHS = (".claude/worktrees",)
+# Claude Code folder: worktrees are copies of the repository, skills hold sample files (this skill's evals).
+EXCLUDED_PATHS = (".claude",)
 MAX_FILE_BYTES = 2_000_000
 CONFIG_FILE = ".avalonia-lint.json"
 DEFAULT_RULES = Path(__file__).resolve().parent.parent / "rules.json"

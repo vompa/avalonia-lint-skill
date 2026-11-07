@@ -21,7 +21,7 @@ The catalog is a paraphrased, independent summary of the documentation. Where th
    ```
 
    Options: `--format json`, `--fail-on error|warning|info|never` (default `error`; exit code 1 when a finding reaches the threshold), `--rules <catalog>`, `--config <file>`.
-   The script skips `bin`, `obj`, `.git`, `.vs`, `.idea`, `node_modules` and `.claude/worktrees`. C# rules only run in projects whose `.csproj` references Avalonia, so a web API in the same repository is not flagged.
+   The script skips `bin`, `obj`, `.git`, `.vs`, `.idea`, `node_modules` and `.claude` (worktrees and skills). C# rules only run in projects whose `.csproj` references Avalonia, so a web API in the same repository is not flagged.
 
 2. **Judge every finding.** A regex cannot see intent. For each hit open the code and decide:
    - *real*: report it with file, line, rule id, the documentation link and the fix from the rule;
